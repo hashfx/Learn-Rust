@@ -1,0 +1,3 @@
+tasks:
+  - name: Install Rust
+    command: sudo apt update && sudo apt install -y rustc cargo
