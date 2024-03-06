@@ -2,7 +2,7 @@
 #![allow(unused)]
 
 // import libraries
-use std::io;
+use std::{cmp::Ordering, io};
 
 fn main() {
     // anything with a "!"" is a Macro
@@ -35,5 +35,18 @@ fn main() {
         18 | 59 => println!("Just at boundary"),  // 18 OR 59
         99..=u32::MAX => println!("You are beyond boundary, mate!"),  // maximum range
         _ => println!("This is default case"),  // default, matches everything else
+    };
+
+    /* Ordering
+        This refers to the Ordering enum defined in the std::cmp module.
+        It represents the result of a comparison between two values.
+        Compulsory to use Less, Equal and Greater
+    */
+    let total_teeth =  32;
+    let adult_teeth = 32;
+    match total_teeth.cmp(&adult_teeth) {
+        Ordering::Equal => println!("You have 32 teeth!"),
+        Ordering::Less => println!("You yet a kid!"),
+        Ordering::Greater => println!("You are a Donkey!")
     };
 }
