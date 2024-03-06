@@ -27,4 +27,13 @@ fn main() {
     let mut age:u32 = age.trim().parse().expect("Age wasn't assigned");  // error handling on the go
     age = age + 1;  // age is mutable
     print!("I am {} years old and I have ${} in account", age, ONE_MILLION);
+
+
+    /* match statement */
+    match age{
+        1..=17 => println!("Yet a kid"),  // range form 1 to 17, including 17
+        18 | 59 => println!("Just at boundary"),  // 18 OR 59
+        99..=u32::MAX => println!("You are beyond boundary, mate!"),  // maximum range
+        _ => println!("This is default case"),  // default, matches everything else
+    };
 }
