@@ -14,3 +14,8 @@ cargo new PROJECTNAME
 + <kbd>cargo.lock</kbd> stores versions for all the dependencies
 + update the versions of dependencies: ```cargo update```
 
+### Run
+
++ ```cd learn_rust/src```
++ Compile rust file ```rustc main.rs```
++ Run compiled file ```./main.rs```
