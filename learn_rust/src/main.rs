@@ -156,5 +156,11 @@ fn main() {
     let str_b = String::from("2nd String");
     let str_comb = str_a + &str_b;  // str_a doesn't exists coz it's in str_comb whereas str_b still exists
     println!("Combined String: {}", str_comb);
-    
+
+    /* Casting */
+    let int_u8_1: u8 = 50;
+    let int_u8_2: u8 = 100;
+    let int_u32_3: u32 = (int_u8_1 as u32) + (int_u8_2 as u32);
+    println!("u8: {}", int_u32_3);
+
 }
