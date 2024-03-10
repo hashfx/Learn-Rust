@@ -21,7 +21,7 @@ fn main() {
     const ONE_MILLION :u32 = 1_000_000;  // const are capital
     const PI:f32 = 3.14159265358979323846264338327950288419;
 
-    // in Rust, we can have variable with same name and different data types
+    // in Rust, we can have variable with same name and different data types aka Shadowing
     let mut age:f32 = 21.0;
     let age :&str = "21";
     let mut age:u32 = age.trim().parse().expect("Age wasn't assigned");  // error handling on the go
