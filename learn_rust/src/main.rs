@@ -70,4 +70,11 @@ fn main() {
         loop_idx+=1;
     }
 
+    /* while loop */
+    let mut loop_idx = 0;  // reset index to 0
+    while loop_idx < arr_1.len() {
+        println!("{}", arr_1[loop_idx]);
+        loop_idx+=1;
+    }
+
 }
