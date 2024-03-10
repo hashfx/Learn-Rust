@@ -49,4 +49,9 @@ fn main() {
         Ordering::Less => println!("You yet a kid!"),
         Ordering::Greater => println!("You are a Donkey!")
     };
+
+    /* Arrays */
+    let arr_1 = [0, 1, 2, 3, 4];
+    println!("arr[1] {}\nLength of array: {}", arr_1[1], arr_1.len());
+
 }
