@@ -87,4 +87,12 @@ fn main() {
             println!("{}", val);
         }
     }
+
+    /* tuple */
+    let my_tuple: (u8, String, f64) = (69, "Hey".to_string(), 420.0);  // tuple of different data types
+    println!("Message: {}", my_tuple.1);  // access elements via index
+
+    // via separate variables
+    let(v1, v2, v3) = my_tuple;
+    println!("Age: {}\nNumber: {}", v1, v3);
 }
