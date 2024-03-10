@@ -77,4 +77,11 @@ fn main() {
         loop_idx+=1;
     }
 
+    /* for loop */
+    for val in arr_1 {
+        if arr_1[val] % 2 == 0 {
+            println!("{}", val);
+        }
+    }
+
 }
