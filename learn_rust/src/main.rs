@@ -54,4 +54,20 @@ fn main() {
     let arr_1 = [0, 1, 2, 3, 4];
     println!("arr[1] {}\nLength of array: {}", arr_1[1], arr_1.len());
 
+    /* Loops */
+    let mut loop_idx = 0;  // index of loop, mutable so that it could be updated
+    loop {
+        // exit the loop if loop_idx exceeds the length of arr_1
+        if loop_idx >= arr_1.len() {
+            break;
+        }
+        // skip if element is not even
+        if arr_1[loop_idx] % 2 != 0 {
+            loop_idx+=1;
+            continue;
+        }
+        println!("{}", arr_1[loop_idx]);
+        loop_idx+=1;
+    }
+
 }
