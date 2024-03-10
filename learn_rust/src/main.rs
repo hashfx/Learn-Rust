@@ -95,4 +95,66 @@ fn main() {
     // via separate variables
     let(v1, v2, v3) = my_tuple;
     println!("Age: {}\nNumber: {}", v1, v3);
+
+    /* String:
+    Strings can be of two types in Rust:
+        String: vector of bytes that can be changed
+        &str: points to string, allows viewing such strings
+    */
+    // growable string
+    let mut str1 = String::new();
+    str1.push('N');  // push a char
+    str1.push_str(" word");  // push char at end
+    println!("{}", str1);
+    
+    // separated by whitespace
+    for word in str1.split_whitespace() {
+        println!("{}", word);
+    }
+
+    // replace string
+    let str2 = str1.replace('N', "B");
+    println!("{}", str2);
+
+    // create String and assign value at the same time
+    let str3:String = String::from("a b c d e f G C d b a e");
+    println!("{}", str3);
+
+    // convert String to Vector
+    let mut vec_str: Vec<char> = str3.chars().collect();
+
+    // sort the char in vector
+    vec_str.sort();
+
+    // remove duplicates
+    vec_str.dedup();
+
+    for char in vec_str {
+        println!("{}", char);  // output individual char
+    }
+
+    // String literal
+    let str4: &str = "Yo, that's a Random String!";
+
+    // convert str4 to a heap allocated string
+    let mut str5: String = str4.to_string();
+    println!("{}", str5);
+
+    // convert string into array of bytes
+    let byte_str_arr1 = str5.as_bytes();
+    println!("Byte Str: {:?}", byte_str_arr1);
+
+    // slice of a String
+    let slice_str = &str5[0..9];  // 9 not included
+    println!("String Slice: {}\nString Length: {}", slice_str, slice_str.len());
+
+    // delete value from mutable String
+    str5.clear();
+
+    // combine Strings
+    let str_a = String::from("1st String");
+    let str_b = String::from("2nd String");
+    let str_comb = str_a + &str_b;  // str_a doesn't exists coz it's in str_comb whereas str_b still exists
+    println!("Combined String: {}", str_comb);
+    
 }
