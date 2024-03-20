@@ -163,4 +163,25 @@ fn main() {
     let int_u32_3: u32 = (int_u8_1 as u32) + (int_u8_2 as u32);
     println!("u8: {}", int_u32_3);
 
+    /* Enums */
+    enum Day {
+        Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+    }
+
+    impl Day {
+        fn is_weekend(&self) -> bool {
+            match self {
+                Day::Saturday | Day::Sunday => true,
+                _ => false,
+            }
+        }
+    }
+
+    let today:Day = Day::Wednesday;
+    match today {
+        Day::Wednesday => println!("It's Wednesday"),
+        _ => println!("Not Wednesday!"),
+    }
+    println!("Is it weekend today {}", today.is_weekend());
+
 }
