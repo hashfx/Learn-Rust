@@ -184,4 +184,33 @@ fn main() {
     }
     println!("Is it weekend today {}", today.is_weekend());
 
+    /* Vectors: stores values of same type, grows if mutable */
+    
+    // empty vector
+    let empty_vector: Vec<i32> = Vec::new();
+
+    // growable vector with defined values
+    let mut grw_vec = vec![1, 2, 3, 4, 5];
+    grw_vec.push(6);  // pust value to end
+    println!("1st value: {}", grw_vec[0]);  // get value form index
+    
+    let second: &i32 = &grw_vec[1]; // verify if value exists
+    match grw_vec.get(1) {
+        Some(second) => println!("2nd value: {}", second),
+        None => println!("No Second Value"),
+    };
+
+    // modify values in vector
+    for i in &mut grw_vec {
+        *i *= 2;
+        println!("{}", i);
+    }
+
+    // length of vector
+    println!("Length of Vector: {}", grw_vec.len());
+
+    // remove last value
+    println!("Pop: {:?}", grw_vec.pop());
+    
+
 }
