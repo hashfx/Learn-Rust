@@ -211,6 +211,36 @@ fn main() {
 
     // remove last value
     println!("Pop: {:?}", grw_vec.pop());
+
+    /* functions */
+
+    println!("Addition: {}", get_sum(4, 5));
+    
+    let (val1, val2) = inc_dec(8);  // receive 2 values from single expression
+    println!("Inc: {}, Dec: {}", val1, val2);
+
+    let num_list = vec![5, 8, -8, -5];
+    println!("Vector Sum: {}", vec_sum(&num_list));
     
 
+}
+
+/* functions */
+
+fn get_sum(x: i32, y: i32) -> i32 {
+    x+y  // no semicolon because the statement doesn't evalute to a function
+}
+
+// return multiple values
+fn inc_dec(a: i32) -> (i32, i32){
+    return (a+1, a-1);
+}
+
+// receive vector as input
+fn vec_sum(vec: &[i32]) -> i32 {
+    let mut vec_sum = 0;
+    for &val in vec.iter(){
+        vec_sum += &val;
+    }
+    vec_sum  // return vac_sum
 }
