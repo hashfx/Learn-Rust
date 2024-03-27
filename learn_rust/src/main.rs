@@ -3,6 +3,7 @@
 
 // import libraries
 use std::{cmp::Ordering, io};
+use std::ops::Add;  // generic trait
 
 fn main() {
     // anything with a "!"" is a Macro
@@ -221,6 +222,10 @@ fn main() {
 
     let num_list = vec![5, 8, -8, -5];
     println!("Vector Sum: {}", vec_sum(&num_list));
+
+    /* generics */
+    println!("Generic sum 10.05 + 5.2 = {}", sum_generics(10.05, 5.2));
+    println!("Generic sum 99 + (-1) = {}", sum_generics(99, -1));
     
 
 }
@@ -243,4 +248,11 @@ fn vec_sum(vec: &[i32]) -> i32 {
         vec_sum += &val;
     }
     vec_sum  // return vac_sum
+}
+
+/* generics */
+
+fn sum_generics<T: Add<Output=T>>(p: T, q: T) -> T {
+    // after including generic add trait
+    return p + q;
 }
