@@ -302,6 +302,28 @@ fn main() {
     }
     let square = Rectangle{length: 10, breadth: 10};
 
+    /* trait */
+
+    trait Shape {
+        fn new (length: i32, width: i32) -> Self;
+        fn area(&self) -> i32;
+    }
+    
+    struct Rhombus {length: i32, width: i32};
+    struct Kite {length: i32, width: i32};
+    
+    impl Shape for Rhombus {
+        fn new(length: i32, width: i32) -> Rhombus {
+            return Rhombus{length, width};
+        }
+        fn area(&self) -> i32 {
+            return self.length * self.width;  // 0.5 * d1 * d2
+        }
+    }
+
+    let rhombus: Rhombus = Shape::new(10, 12);
+    println!("Area of Rhombus = {}", rhombus.area());
+
 }
 
 /* functions */
