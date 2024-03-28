@@ -4,6 +4,7 @@
 // import libraries
 use std::{cmp::Ordering, io};
 use std::ops::Add;  // generic trait
+use std::collections::HashMap;  // hashmaps
 
 fn main() {
     // anything with a "!"" is a Macro
@@ -247,6 +248,33 @@ fn main() {
     let o_str_2: String = o_str_1.clone();  // creates 2 copies
     println!("Hello {}", o_str_1);
 
+
+    /* hashmaps */
+    let mut ipa = HashMap::new();
+    
+    // insert values to hashmap
+    ipa.insert("A", "Alpha");
+    ipa.insert("B", "Bravo");
+    ipa.insert("C", "Charlie");
+    ipa.insert("D", "Delta");
+
+    // iterate over HashMap
+    for(k, v) in ipa.iter(){
+        println!("{}: {}", k, v);
+    }
+
+    // length of HashMap
+    println!("Length of Hashmap: {}", ipa.len());
+
+    // check for specific key index
+    if ipa.contains_key("C") {
+        let _charlie = ipa.get("C");
+
+        match _charlie {
+            Some(x) => println!("Charlie Charlie!"),
+            None => println!("Charlie Negative"),
+        }
+    }
 
 }
 
