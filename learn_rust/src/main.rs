@@ -226,7 +226,27 @@ fn main() {
     /* generics */
     println!("Generic sum 10.05 + 5.2 = {}", sum_generics(10.05, 5.2));
     println!("Generic sum 99 + (-1) = {}", sum_generics(99, -1));
-    
+
+    /*
+    Ownership:
+        Stack: Stores values in a last in first out format, data on the stack must have a defined fixed size
+        Heap: When putting data on the heap you request a certain amount of space.
+            The OS finds space available and returns an address for that space called a pointer.
+
+        RULES in Rust:
+            > Each value has a variable that's called its owner
+            > There is only one owner at a time
+            > When the owner goes out of scope the value disappears
+
+    */
+
+    // assignment vs clone operator in Ownership : works with string, arrays, vectors and not integers, bool, float or others
+    let o_str_1: String = String::from("world");
+    // let o_str_2: String = o_str_1;  // assign o_str_1 to o_str_2
+    // println!("o_str_1 {}", o_str_1);  // error: borrow of moved value: `o_str_1`, value borrowed here after move
+    let o_str_2: String = o_str_1.clone();  // creates 2 copies
+    println!("Hello {}", o_str_1);
+
 
 }
 
