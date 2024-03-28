@@ -276,6 +276,32 @@ fn main() {
         }
     }
 
+    /* struct */
+
+    #[derive(Debug)]  // allows Rust to print its variants in a human-readable format
+    enum Rank {Lt, Cpt, Mjr, Col}
+    struct Soldier {
+        name: String,
+        rank: Rank,
+        number: i32,
+    }
+
+    let mut karl = Soldier{name: String::from("Karl"), rank: Rank::Lt, number: 420};
+    karl.rank = Rank::Cpt;
+    // enums in Rust by default don't support assignment (=).
+    // They are considered different variants of the same type,
+    // and directly assigning a new variant isn't allowed.
+    // println!("{:?}", karl.rank);  // FIXME: error [description above]
+    karl = Soldier { name: karl.name.clone(), rank: Rank::Cpt, number: karl.number };
+    println!("{:?}", karl.rank);
+
+    // generic struct
+    struct Rectangle<L, B>{
+        length: L,
+        breadth: B,
+    }
+    let square = Rectangle{length: 10, breadth: 10};
+
 }
 
 /* functions */
